@@ -1,0 +1,21 @@
+<!--property binding and event binding-->
+<!--<input type="text"
+(input)="onUpdateServerName($event)">-->
+<br>
+<input type="text"
+[(ngModel)]="serverName">
+<p>{{serverName}}</p>
+
+<button [disabled]="!allowNewServer"
+(click)="onCreateServer()">add server</button>
+
+<p>{{serverCreationStatus}}</p>
+
+
+<!--change string interpolation to property binding-->
+<!--<p>{{allowNewServer}}</p>
+<p [innerText]="allowNewServer"></p>-->
+
+
+
+<app-server></app-server>
