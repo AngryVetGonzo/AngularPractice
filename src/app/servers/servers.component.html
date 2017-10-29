@@ -4,18 +4,23 @@
 <br>
 <input type="text"
 [(ngModel)]="serverName">
-<p>{{serverName}}</p>
+<!--<p>{{serverName}}</p>-->
+<br>
+<br>
 
 <button [disabled]="!allowNewServer"
 (click)="onCreateServer()">add server</button>
 
-<p>{{serverCreationStatus}}</p>
+<!--<p>{{serverCreationStatus}}</p>-->
 
 
 <!--change string interpolation to property binding-->
 <!--<p>{{allowNewServer}}</p>
 <p [innerText]="allowNewServer"></p>-->
 
+<!--structural directive *ngIf-->
+<p *ngIf="serverCreated">server was created, server name is {{serverName}}</p>
 
 
-<app-server></app-server>
+
+<app-server *ngFor="let server of servers"></app-server>
